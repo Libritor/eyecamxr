@@ -1,0 +1,36 @@
+using UnityEngine;
+
+/// <summary>
+/// Ensures the immersive Muse monitor exists even if the scene is empty.
+/// This avoids relying on editor menu actions (e.g., "MuseLog > Setup Scene").
+/// </summary>
+public static class MuseLogBootstrapper
+{
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    private static void Boot()
+    {
+        // Managers (OSC receiver)
+        if (MuseOSCManager.Instance == null)
+        {
+            var managers = GameObject.Find("Managers") ?? new GameObject("Managers");
+            var osc = managers.GetComponent<MuseOSCManager>() ?? managers.AddComponent<MuseOSCManager>();
+            osc.useNativeMuse = false; // default to OSC from phone/computer
+            osc.port = 5000;
+        }
+
+        // Camera passthrough config (optional)
+        var cam = Camera.main;
+        if (cam != null && cam.GetComponent<PassthroughSetup>() == null)
+        {
+            cam.gameObject.AddComponent<PassthroughSetup>();
+        }
+
+        // UI Panel
+        if (Object.FindAnyObjectByType<MuseEegMonitorPanel>() == null)
+        {
+            var go = new GameObject("MuseEegMonitorPanel");
+            go.AddComponent<MuseEegMonitorPanel>();
+        }
+    }
+}
+

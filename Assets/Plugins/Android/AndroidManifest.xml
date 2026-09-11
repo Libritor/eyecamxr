@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.antigravity.muselogmr" xmlns:tools="http://schemas.android.com/tools">
+  
+  <uses-feature android:name="android.hardware.vr.headtracking" android:version="1" android:required="true" />
+  
+  <!-- Muse Permissions -->
+  <uses-permission android:name="android.permission.BLUETOOTH" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+  <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+  <application 
+      tools:replace="android:theme,android:allowBackup"
+      android:allowBackup="false"
+      android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+    
+    <meta-data android:name="com.oculus.supportedDevices" android:value="quest|quest2|questpro|quest3|quest3s" tools:replace="android:value" />
+    <meta-data android:name="com.oculus.vr.focusaware" android:value="true" />
+    
+    <activity android:name="com.unity3d.player.UnityPlayerActivity"
+              android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+              android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+              android:screenOrientation="landscape"
+              android:launchMode="singleTask"
+              android:resizeableActivity="false"
+              android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="com.oculus.intent.category.VR" />
+      </intent-filter>
+      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+      <meta-data android:name="android.notch_support" android:value="true" />
+    </activity>
+  </application>
+</manifest>

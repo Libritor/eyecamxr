@@ -1,0 +1,14 @@
+Library/
+Temp/
+Logs/
+UserSettings/
+obj/
+Build/
+BuildDirectories/
+TestResults/
+EditorRuns/
+*.apk
+build_log*
+build_eyecam.log
+*.csv.meta~
+.vs/
