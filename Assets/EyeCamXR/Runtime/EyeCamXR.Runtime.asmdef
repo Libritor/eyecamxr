@@ -1,0 +1,17 @@
+{
+    "name": "EyeCamXR.Runtime",
+    "rootNamespace": "EyeCamXR",
+    "references": [
+        "EyeCamXR.Dsp",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

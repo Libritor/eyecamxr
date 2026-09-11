@@ -9,6 +9,11 @@ public static class MuseLogBootstrapper
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void Boot()
     {
+        // Only own the original MuseLog scenes; other scenes (EyeCamXR)
+        // build their own rig and must not inherit this one or its port bind.
+        var sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        if (sceneName != "V1" && sceneName != "V2") return;
+
         // Managers (OSC receiver)
         if (MuseOSCManager.Instance == null)
         {

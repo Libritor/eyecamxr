@@ -1,0 +1,23 @@
+{
+    "name": "EyeCamXR.Tests.Play",
+    "rootNamespace": "EyeCamXR.Tests",
+    "references": [
+        "EyeCamXR.Runtime",
+        "EyeCamXR.Dsp",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
