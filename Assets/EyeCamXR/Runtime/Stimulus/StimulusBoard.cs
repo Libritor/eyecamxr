@@ -44,7 +44,7 @@ namespace EyeCamXR
             dotGo.transform.SetParent(_root, false);
             dotGo.transform.localScale = new Vector3(0.004f, 0.004f, 1);
             dotGo.transform.localPosition = new Vector3(0, 0, -0.001f);
-            var dotMat = new Material(Shader.Find("Unlit/Color"));
+            var dotMat = new Material(EyeCamRender.Solid);
             dotMat.color = Color.white;
             dotGo.GetComponent<Renderer>().sharedMaterial = dotMat;
             _dot = dotGo.transform;
@@ -58,7 +58,7 @@ namespace EyeCamXR
             go.name = name;
             Object.Destroy(go.GetComponent<Collider>());
             go.transform.SetParent(parent, false);
-            var mat = new Material(Shader.Find("Unlit/Color"));
+            var mat = new Material(EyeCamRender.Solid);
             mat.color = c;
             go.GetComponent<Renderer>().sharedMaterial = mat;
             return go.GetComponent<Renderer>();

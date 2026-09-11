@@ -557,7 +557,7 @@ namespace EyeCamXR
             go.transform.localPosition = new Vector3(0, -0.12f, 0.9f);
             float aspect = (float)tex.width / tex.height;
             go.transform.localScale = new Vector3(0.4f * aspect, 0.4f, 1);
-            var mat = new Material(Shader.Find("Unlit/Texture"));
+            var mat = new Material(EyeCamRender.Textured);
             mat.mainTexture = tex;
             go.GetComponent<Renderer>().sharedMaterial = mat;
         }

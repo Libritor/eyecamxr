@@ -36,6 +36,14 @@ namespace EyeCamXR
             tm.characterSize = size;
             tm.fontSize = 64;
             tm.color = color;
+            // A runtime-added TextMesh has no font in a build (the editor
+            // auto-assigns one, which hid this): set font + its material.
+            var font = EyeCamRender.DefaultFont;
+            if (font != null)
+            {
+                tm.font = font;
+                go.GetComponent<MeshRenderer>().sharedMaterial = font.material;
+            }
             return tm;
         }
 
