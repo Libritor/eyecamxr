@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.util.Log;
 
 import com.choosemuse.libmuse.ConnectionState;
-import com.choosemuse.libmuse.Eeg;
 import com.choosemuse.libmuse.Muse;
 import com.choosemuse.libmuse.MuseArtifactPacket;
 import com.choosemuse.libmuse.MuseConnectionListener;
@@ -49,11 +48,6 @@ public class EyeCamMuseBridge {
 
     private int blinkCount = 0;
     private int jawCount = 0;
-
-    private static final Eeg[] EEG_MAP = {
-        Eeg.EEG1, Eeg.EEG2, Eeg.EEG3, Eeg.EEG4,
-        Eeg.AUX_LEFT, Eeg.AUX_RIGHT
-    };
 
     public EyeCamMuseBridge(Activity activity) {
         manager = MuseManagerAndroid.getInstance();
@@ -107,15 +101,15 @@ public class EyeCamMuseBridge {
                     channelCount = n;
                     Log.i(TAG, "EEG valuesSize=" + n);
                 }
+                java.util.List<Double> vals = p.values();
                 synchronized (lock) {
                     int idx = (head + count) % RING;
                     if (count == RING) { head = (head + 1) % RING; count--; }
                     ringTs[idx] = p.timestamp();
                     for (int c = 0; c < n; c++) {
-                        double v;
-                        if (c < EEG_MAP.length) v = p.getEegChannelValue(EEG_MAP[c]);
-                        else v = p.getValues().get(c);
-                        ringVals[idx][c] = Double.isNaN(v) ? 0.0 : v;
+                        Double v = vals.get(c);
+                        ringVals[idx][c] =
+                            (v == null || Double.isNaN(v)) ? 0.0 : v;
                     }
                     for (int c = n; c < MAX_CH; c++) ringVals[idx][c] = 0.0;
                     count++;
