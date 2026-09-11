@@ -1,14 +1,14 @@
 # ninja log v5
 8	2035	7930984958095723	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	cb3c566f443d7a0d
-3	380	7939170852733028	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	892070b67bc62bbf
-381	573	7939170854508635	C:/Users/alexa/.gemini/antigravity/scratch/MuseLogMR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3b2l4e47/obj/arm64-v8a/libswappywrapper.so	f60b24aa1002a24b
+4	337	8108341133289746	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	892070b67bc62bbf
+338	509	8108341134931441	C:/Users/alexa/.gemini/antigravity/scratch/MuseLogMR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3b2l4e47/obj/arm64-v8a/libswappywrapper.so	f60b24aa1002a24b
 42	1608	7930984953838739	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	181584b2892b8fde
 25	1624	7930984954010532	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	d13b06b76a96fd58
-50	1648	7930984954249582	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	254b0aa550e5e491
 2036	2159	7930984959373850	C:/Users/alexa/.gemini/antigravity/scratch/MuseLogMR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3b2l4e47/obj/arm64-v8a/libgame.so	9d8a612f49acafaa
 1	1701	7930984954759024	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	7f1a44f12219578
+50	1648	7930984954249582	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	254b0aa550e5e491
 57	1873	7930984956477620	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	873ab2f5bd95b4f1
 16	1650	7930984954249582	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	23fd2b50f8b9a8be
 34	1923	7930984956979578	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	57a1abc7115d2c3
-4	337	8108341133289746	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	892070b67bc62bbf
-338	509	8108341134931441	C:/Users/alexa/.gemini/antigravity/scratch/MuseLogMR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3b2l4e47/obj/arm64-v8a/libswappywrapper.so	f60b24aa1002a24b
+4	313	8108359495534608	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	892070b67bc62bbf
+314	502	8108359497246065	C:/Users/alexa/.gemini/antigravity/scratch/MuseLogMR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3b2l4e47/obj/arm64-v8a/libswappywrapper.so	f60b24aa1002a24b

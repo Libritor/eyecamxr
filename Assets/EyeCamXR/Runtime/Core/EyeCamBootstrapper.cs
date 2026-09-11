@@ -12,6 +12,7 @@ namespace EyeCamXR
         {
             if (SceneManager.GetActiveScene().name != "EyeCamXR") return;
             if (SessionController.Instance != null) return;
+            EyeCamBootConfig.Apply();
             var go = new GameObject("EyeCamSession");
             go.AddComponent<SessionController>();
             Debug.Log("[EyeCam] bootstrapped");

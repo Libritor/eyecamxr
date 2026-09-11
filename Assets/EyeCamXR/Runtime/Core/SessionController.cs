@@ -331,6 +331,8 @@ namespace EyeCamXR
                         $"block {b + 1}/{EyeCamRunConfig.calibBlocks} " +
                         (isOn ? "ON" : "OFF"));
                     double prev = t0;
+                    double lastSpec = 0;
+                    bool prevFl = false;
                     while (EegClock.Now - t0 < dur)
                     {
                         if (_input.Abort) { _info.aborted = true; yield break; }
@@ -340,6 +342,15 @@ namespace EyeCamXR
                         log.Row(now, -1, -1, isOn ? 1.0 : 0.0, fl, now - prev);
                         TrackFlicker(fl, now);
                         _governor.CountFrame(now);
+                        // Mirror the flicker to the bridge: the remote phantom
+                        // (phantom-at-Quest) and spectators need calibration
+                        // luminance/edges, not just scan cursor positions.
+                        if (fl != prevFl || now - lastSpec > 0.1)
+                        {
+                            _spectator.Cursor(-1, -1, isOn ? 1.0 : 0.0, fl);
+                            lastSpec = now;
+                        }
+                        prevFl = fl;
                         prev = now;
                         yield return null;
                     }
